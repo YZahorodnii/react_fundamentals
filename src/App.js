@@ -1,33 +1,33 @@
-// import Posts from "./Components/Posts/Posts";
-// import {useState} from "react";
+import Posts from "./Components/Posts/Posts";
+import {useState} from "react";
 // import FullPost from "./Components/fullPost/FullPost";
-import Launches from "./Components/Launches/Launches";
+// import Launches from "./Components/Launches/Launches";
 import "./App.css"
 
 
 function App() {
-    // let [chosenPost, setChosenPost] = useState(null);
+//     let [chosenPost, setChosenPost] = useState(null);
 // const lift = (obj) => {
 //     setChosenPost(obj)
 // };
   return (
-      <div>
+      /*<div>
           <Launches/>
-      </div>
+      </div>*/
 
-      /*<div className="container">
+      <div className="container">
         <div className="leftSide">
-      <Posts lift={lift}/>
+      <Posts/>
         </div>
-        {
+        {/*{
         chosenPost &&
             (
         <div className="rightSide">
         <FullPost value={chosenPost}/>
         </div>
             )
-        }
-    </div>*/
+        }*/}
+    </div>
   );
 }
 
