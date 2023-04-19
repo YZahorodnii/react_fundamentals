@@ -5,13 +5,16 @@ import {joiResolver} from "@hookform/resolvers/joi";
 import {carValidator} from "../../validators/car.validator";
 
 const CarForm = ({setAllCars, carForUpdate}) => {
-    const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm({mode: 'all', resolver:joiResolver(carValidator)});
+    const {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm({
+        mode: 'all',
+        resolver: joiResolver(carValidator)
+    });
 
     useEffect(() => {
         if (carForUpdate) {
-            setValue('brand', carForUpdate.brand, {shouldValidate:true});
-            setValue('price', carForUpdate.price, {shouldValidate:true});
-            setValue('year', carForUpdate.year, {shouldValidate:true});
+            setValue('brand', carForUpdate.brand, {shouldValidate: true});
+            setValue('price', carForUpdate.price, {shouldValidate: true});
+            setValue('year', carForUpdate.year, {shouldValidate: true});
         }
     }, [carForUpdate])
 
@@ -51,7 +54,7 @@ const CarForm = ({setAllCars, carForUpdate}) => {
             )}/>
             {errors.year && <span>{errors.year.message}</span>}
 
-            <button disabled={!isValid}>{carForUpdate?'update':'save'}</button>
+            <button disabled={!isValid}>{carForUpdate ? 'update' : 'save'}</button>
         </form>
 
     );
