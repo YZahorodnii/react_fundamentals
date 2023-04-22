@@ -26,8 +26,10 @@ const CarForm = ({setAllCars, carForUpdate}) => {
     }
 
 
-    const update = async (car) => {
-
+    const update = async (car,id) => {
+        let {data} = await carService.updateById(id, car)
+        setAllCars(prev => !prev);
+        reset()
     }
 
     return (
