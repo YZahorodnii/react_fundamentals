@@ -7,7 +7,6 @@ import {userValidator} from "../../validators/user.validator";
 const UserForm = ({setAllUsers, commentForUpdate}) => {
     let {register, handleSubmit, reset, formState: {errors, isValid}, setValue} = useForm({mode: 'all', resolver: joiResolver(userValidator)})
     const save = async (user)=> {
-        console.log(user);
         const {data} = await userService.create(user);
         setAllUsers(prev => !prev);
         reset();

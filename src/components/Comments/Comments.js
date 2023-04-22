@@ -13,7 +13,7 @@ const Comments = () => {
     }, [allComments])
     return (
         <div>
-            <CommentForm setAllComments={setAllComments} commentForUpdate={commentForUpdate}/>
+            <CommentForm setAllComments={setAllComments} commentForUpdate={commentForUpdate} setCommentForUpdate={setCommentForUpdate}/>
             {
                 comments.map(comment => <Comment comment={comment} setCommentForUpdate={setCommentForUpdate} key={comment.id}/>)
             }
