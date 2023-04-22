@@ -23,11 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea
-.idea/
-.idea/*
-.idea/**
-
-.idea/misc.xml
-.idea/modules.xml
-.idea/workspace.xml
-
+package-lock.json
