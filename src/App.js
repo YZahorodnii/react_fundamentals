@@ -3,12 +3,13 @@ import Comments from "./components/Comments/Comments";
 
 
 function App() {
-  return (
-    <div>
-      <Users/>
-      {/*<Comments/>*/}
-    </div>
-  );
+    return (
+        <div>
+
+            {/*<Users/>*/}
+            <Comments/>
+        </div>
+    );
 }
 
 export default App;
