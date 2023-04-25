@@ -1,21 +1,15 @@
 import React from 'react';
 import {Link, Outlet} from "react-router-dom";
 
-const Todo = () => {
+const Todo = ({todo}) => {
+    const {id, userId, title, completed} = todo;
     return (
         <div>
-            <h3>Sub page menu</h3>
-            <ul>
-                <li><Link to={'users'}>users page</Link></li>
-                <li><Link to={'posts'}>posts page</Link></li>
-                <li><Link to={'comments'}>comments page</Link></li>
-            </ul>
-
-            <div>
-                <h3>view</h3>
-                <Outlet/>
-            </div>
-
+            <Outlet/>
+            <div>id:{id}</div>
+            <div>userId:{userId}</div>
+            <div>title:{title}</div>
+            <div>completed:{completed}</div>
         </div>
     );
 };

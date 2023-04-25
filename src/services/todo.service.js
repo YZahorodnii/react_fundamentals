@@ -8,3 +8,6 @@ const todoService = {
     updateById: (id, todo) => axiosService.put(`${urls.todos}/${id}`, todo),
     deleteById: (id) => axiosService.delete(`${urls.todos}/${id}`)
 }
+export {
+    todoService
+}
