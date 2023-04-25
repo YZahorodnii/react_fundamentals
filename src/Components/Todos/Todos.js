@@ -6,10 +6,11 @@ import {todoService} from "../../services/todo.service";
 const Todos = () => {
      const [todos, setTodos] = useState([]);
      useEffect(() => {
-         fetch('https://jsonplaceholder.typicode.com/todos').then(value => value.json()).then(value => setTodos(value))
+         todoService.getAll().then(value => value.data).then(value => setTodos(value))
      }, [])
     return (
         <div>
+            <h3>Review todos</h3>
             {
                 todos.map(todo => <Todo key={todo.id} todo={todo}/>)
             }

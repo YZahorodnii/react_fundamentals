@@ -23,6 +23,7 @@ import PostDetails from "./Components/PostDetails/PostDetails";
 import Albums from "./Components/Albums/Albums";
 import Todo from "./Components/Todo/Todo";
 import Todos from "./Components/Todos/Todos";
+import Post from "./Components/Post/Post";
 
 function App() {
     return (
@@ -39,18 +40,10 @@ function App() {
                 <Route path={'/'} element={<Home/>}/>
                 <Route path={'/todos'} element={<Todos/>}/>
                 <Route path={'/albums'} element={<Albums/>}/>
-                <Route path={'/comments'} element={<Comments/>}/>
+                <Route path={'/comments'} element={<Comments/>}>
+                    <Route path={':id'} element={<PostDetails/>}/>
+                </Route>
             </Routes>
-
-
-
-
-
-
-
-
-
-
 
 
 

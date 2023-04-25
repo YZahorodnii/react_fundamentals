@@ -6,14 +6,11 @@ const Post = ({post}) => {
     let navigate = useNavigate();
     return (
         <div>
+            <Outlet/>
             <div>userId:{userId}</div>
             <div>id:{id}</div>
             <div>title:{title}</div>
             <div>body:{body}</div>
-            <button onClick={() => {
-                navigate(id.toString())
-            }
-            }>Post details</button>
         </div>
     );
 };
