@@ -16,6 +16,7 @@ const CarForm = () => {
             <input type="text" placeholder={'price'} {...register('price')}/>
             <input type="text" placeholder={'year'} {...register('year')}/>
             <button disabled={!isValid}>create</button>
+
         </form>
     );
 };

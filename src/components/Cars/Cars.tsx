@@ -17,6 +17,7 @@ const Cars = () => {
             {
                 cars.map(car => <Car car={car} key={car.id}/>)
             }
+
         </div>
     );
 };

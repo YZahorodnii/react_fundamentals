@@ -7,6 +7,7 @@ const axiosService = axios.create({baseUrl});
 
 export {
     axiosService
+
 }
 
 export type {
