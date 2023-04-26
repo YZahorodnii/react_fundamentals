@@ -1,12 +1,10 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
-import {all} from "axios";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {commentValidator} from "../../validators/comment.validator";
 import {commentService} from "../../services/comment.service";
-import comments from "../Comments/Comments";
 
-const CommentForm = ({setAllComments, commentForUpdate, setCommentForUpdate}) => {
+const CommentForm = ({setAllComments, comments, setComments, commentForUpdate, setCommentForUpdate}) => {
     const {register, handleSubmit, reset, setValue, formState: {errors, isValid}} = useForm({mode:  'all', resolver: joiResolver(commentValidator)})
 
     useEffect(() => {
@@ -18,10 +16,9 @@ const CommentForm = ({setAllComments, commentForUpdate, setCommentForUpdate}) =>
     }, [commentForUpdate])
     let create = async (comment) => {
         const {data} = await commentService.create(comment)
-        setAllComments(prev => !prev);
+        setComments([...comments, data]);
         reset();
     }
-
     let update = async (comment) => {
         const {data} = await commentService.updateById(commentForUpdate.id, comment)
         setAllComments(prev => !prev);

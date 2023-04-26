@@ -8,12 +8,14 @@ const Comments = () => {
     const [comments, setComments] = useState([]);
     let [allComments, setAllComments] = useState([])
     let [commentForUpdate, setCommentForUpdate] = useState(null)
+
     useEffect(() => {
         commentService.getAll().then(value => value.data).then(value => setComments(value))
-    }, [allComments])
+    }, [])
+
     return (
         <div>
-            <CommentForm setAllComments={setAllComments} commentForUpdate={commentForUpdate} setCommentForUpdate={setCommentForUpdate}/>
+            <CommentForm setComments={setComments} comments={comments} setAllComments={setAllComments} commentForUpdate={commentForUpdate} setCommentForUpdate={setCommentForUpdate}/>
             {
                 comments.map(comment => <Comment comment={comment} setCommentForUpdate={setCommentForUpdate} key={comment.id}/>)
             }
