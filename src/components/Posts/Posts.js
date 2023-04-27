@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
+import {Component} from "react";
+import {render} from "react-dom";
 import {postsService} from "../../services/posts.service";
 import {Post} from "../Post/Post";
+
 class Posts extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
-        this.state = {
-            posts: [],
-            a: 5
-        }
+        this.state = {posts: []}
     }
+
     componentDidMount() {
         postsService.getAll().then(value => value.data).then(value => this.setState({posts: value}))
     }
@@ -21,7 +21,8 @@ class Posts extends Component {
                 }
             </div>
         )
-}
+    }
+
 }
 
 export {Posts}
