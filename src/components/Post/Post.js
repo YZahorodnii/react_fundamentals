@@ -5,12 +5,13 @@ class Post extends Component {
         super(props);
     }
     render () {
-        const post = this.props.post;
+        const {id, title, body} = this.props.post;
         return (
             <div>
-                {
-
-                }
+                    <div>id:{id}</div>
+                    <div>title:{title}</div>
+                    <div>body:{body}</div>
+                <br/>
             </div>
         )
     }

@@ -5,7 +5,7 @@ import {Comments} from "../components/Comments/Comments";
 const CommentsPage = () => {
     return (
         <div>
-            CommentPage
+            <Comments/>
         </div>
     );
 };

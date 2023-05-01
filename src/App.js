@@ -10,17 +10,16 @@ import CommentsPage from "./Pages/CommentsPage";
 import CatDogPage from "./Pages/CatDogPage";
 
 function App() {
-  return (
-    <div>
-      <Routes>
-        <Route path={'/'} element={<MainLayout/>}/>
-        <Route index element={<Navigate to={'posts'}/>}/>
-        <Route path={'posts'} element={<PostsPage/>}/>
-        <Route path={'comments'} element={<CommentsPage/>}/>
-        <Route path={'cat_dogs'} element={<CatDogPage/>}/>
-      </Routes>
-    </div>
-  );
+    return (
+        <Routes>
+            <Route path={'/'} element={<MainLayout/>}>
+                {/*<Route index element={<Navigate to={'posts'}/>}/>*/}
+                <Route path={'posts'} element={<PostsPage/>}/>
+                <Route path={'comments'} element={<CommentsPage/>}/>
+                <Route path={'cats_dogs'} element={<CatDogPage/>}/>
+            </Route>
+        </Routes>
+    );
 }
 
 export default App;

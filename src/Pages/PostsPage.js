@@ -4,7 +4,7 @@ import {Posts} from "../components/Posts/Posts";
 const PostsPage = () => {
     return (
         <div>
-            PostsPage
+            <Posts/>
         </div>
     );
 };

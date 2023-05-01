@@ -11,6 +11,7 @@ class Comment extends Component {
                 <div>id:{id}</div>
                 <div>name:{name}</div>
                 <div>body:{body}</div>
+                <br/>
             </div>
         )
     }

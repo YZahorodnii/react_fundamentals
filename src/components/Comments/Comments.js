@@ -16,7 +16,7 @@ class Comments extends Component {
         return (
             <div>
                 {
-                    // this.state.comments.map(comment => <Comment key={comment.id} comment={comment}/>)
+                    this.state.comments.map(comment => <Comment key={comment.id} comment={comment}/>)
                 }
             </div>
         )
