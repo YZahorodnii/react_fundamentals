@@ -5,22 +5,22 @@ import css from "../../src/components/Forms.module.css"
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case action.type = 'ADD_CAT':
+        case 'ADD_CAT':
             const cat = action.payload;
             const catId = state.cats.slice(-1)[0]?.id + 1 || 1;
             cat.id = catId;
             return {...state, cats: [...state.cats, cat]};
-        case action.type = 'ADD_DOG':
+        case 'ADD_DOG':
             const dog = action.payload;
             const dogId = state.dogs.splice(-1)[0]?.id + 1 || 1;
             dog.id = dogId;
             return {...state, dogs: [...state.dogs, dog]};
-        case action.type = 'DELETE_CAT':
+        case 'DELETE_CAT':
             const catIdForDelete = action.payload;
             const catIndex = state.cats.findIndex(value => value.id === catIdForDelete);
             state.cats.splice(catIndex, 1);
             return {...state}
-        case action.type = 'DELETE_DOG':
+        case 'DELETE_DOG':
             const dogIdForDelete = action.payload;
             const dogIndex = state.dogs.findIndex(value => value.id === dogIdForDelete);
             state.dogs.splice(dogIndex, 1);
