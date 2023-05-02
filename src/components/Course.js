@@ -1,10 +1,14 @@
 import React from "react";
-const Course = ({setCourses}) => {
-    const {id, title} = setCourses;
+const Course = ({course}) => {
+    const {id, title} = course;
+    const deleteLang = (item) => {
+        console.log(item);
+    }
     return (
         <div>
-            <div>id:{id}</div>
-            <div>title:{title}</div>
+            <ul>
+            <li>{title}<button onClick={deleteLang(course)}>delete</button></li>
+            </ul>
         </div>
     )
 }
