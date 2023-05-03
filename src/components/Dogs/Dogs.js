@@ -9,6 +9,7 @@ const Dogs = ({stateDispatch}) => {
     const saveDog = (dog) => {
         console.log(dog);
         dispatch({type: 'ADD_DOG', payload: dog});
+        reset()
     }
     return (
         <div>
