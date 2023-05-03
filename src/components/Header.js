@@ -8,19 +8,16 @@
 // Реалізувати створення, видалення та оновлення машин
 
 import React from 'react';
-import {Outlet} from "react-router-dom";
-
-import UsersPage from "../pages/UsersPage";
-import CarsPage from "../pages/CarsPage";
-import CommentsPage from "../pages/CommentsPage";
+import {NavLink, Outlet} from "react-router-dom";
 
 const Header = () => {
     return (
         <div>
+            <NavLink to={'/'}>Home</NavLink>
+            <NavLink to={'/users'}>Users</NavLink>
+            <NavLink to={'/comments'}>Comments</NavLink>
+            <NavLink to={'/cars'}>Cars</NavLink>
             <Outlet/>
-            <UsersPage/>
-            <CommentsPage/>
-            <CarsPage/>
         </div>
     );
 };
