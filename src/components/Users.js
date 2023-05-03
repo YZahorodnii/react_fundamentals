@@ -10,15 +10,15 @@ import {Form} from "react";
 const Users = () => {
     const dispatch = useDispatch();
     const {users} = useSelector(state => state.users);
-    const [newUsers, setNewUsers] = useState();
     useEffect(() => {
         usersService.getAll().then(value => value.data).then(value => dispatch(usersActions.getUsers(value)))
-    });
+    }, []);
 
     const {register, reset, handleSubmit} = useForm();
-    const save = (user) => {
+    const save = async (user) => {
+        const {data} = await usersService.create(user);
         console.log(user);
-
+        dispatch(usersActions.getUsers([...users, data]))
         reset();
     }
     return (
