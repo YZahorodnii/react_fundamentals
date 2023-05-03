@@ -1,6 +1,7 @@
 import React from 'react';
-import Users from "./Components/Users/Users";
+
 import Comments from "./Components/Comments/Comments";
+import Users from "./components/Users/Users";
 
 const App = () => {
     return (
