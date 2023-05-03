@@ -4,8 +4,8 @@ import {usersService} from "../services";
 import {usersActions} from "../redux/slices";
 import UsersPage from "../pages/UsersPage";
 import User from "./User";
-import {Form} from "react-router-dom";
 import {useForm} from "react-hook-form";
+import {Form} from "react-router-dom";
 
 const Users = () => {
     const dispatch = useDispatch();
@@ -20,14 +20,15 @@ const Users = () => {
         reset();
     }
     return (
-        <div>
-            <Form></Form>
             <div>
+                {<Form>
+                    <input type="text"/>
+                </Form>}
+
                 {
                     users.map(user => <User key={user.id} user={user}/>)
                 }
             </div>
-        </div>
     );
 };
 
