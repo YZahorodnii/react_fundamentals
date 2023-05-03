@@ -21,14 +21,12 @@ const Users = () => {
     }
     return (
         <div>
-            <Form onSubmit={handleSubmit(save)}>
-                <input type="text" placeholder={'name'} {...register('name')}/>
-                <input type="text" placeholder={'email'} {...register('email')}/>
-                <button>save</button>
-            </Form>
-            {
-                users.map(user => <User key={user.id} user={user}/>)
-            }
+            <Form></Form>
+            <div>
+                {
+                    users.map(user => <User key={user.id} user={user}/>)
+                }
+            </div>
         </div>
     );
 };
