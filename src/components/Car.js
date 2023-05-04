@@ -1,8 +1,8 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import carsForm from "./carsForm/CarsForm";
-import {carsAction, carsReducer} from "../redux/slices";
+import {useDispatch} from "react-redux";
+import {carsAction} from "../redux/slices";
 import {carsService} from "../services";
+import css from './PageElements.module.css'
 
 const Car = ({car}) => {
     const {id, brand, price, year} = car;
@@ -14,17 +14,15 @@ const Car = ({car}) => {
     }
 
     return (
-        <div>
-            <div>
-                <ul>
-                    <li>{id}</li>
-                    <li>{brand}</li>
-                    <li>{price}</li>
-                    <li>{year}</li>
-                    <button onClick={() => dispatch(carsAction.setCarForUpdate(car))}>update</button>
-                    <button onClick={() => deleteCar(car)}>delete</button>
-                </ul>
-            </div>
+        <div className={css.PageElements}>
+            <ul>
+                <li>{id}</li>
+                <li>{brand}</li>
+                <li>{price}</li>
+                <li>{year}</li>
+                <button onClick={() => dispatch(carsAction.setCarForUpdate(car))}>update</button>
+                <button onClick={() => deleteCar(car)}>delete</button>
+            </ul>
         </div>
     );
 };
