@@ -7,7 +7,7 @@ const initialState = {
 }
 
 const slice = createSlice({
-    name: 'cars',
+    name: 'carSlice',
     initialState,
     reducers: {
         setAll: (state, action) => {
@@ -16,7 +16,7 @@ const slice = createSlice({
         setCarForUpdate: (state, action) => {
             state.carForUpdate = action.payload
         },
-        changeTrigger: (state, actions) => {
+        changeTrigger: (state, action) => {
             state.trigger = !state.trigger
         }
 
