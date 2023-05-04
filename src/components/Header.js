@@ -9,15 +9,15 @@
 
 import React from 'react';
 import {NavLink, Outlet} from "react-router-dom";
+import css from './Header.module.css'
 
 const Header = () => {
     return (
-        <div>
+        <div className={css.Header}>
             <NavLink to={'/'}>Home</NavLink>
             <NavLink to={'/users'}>Users</NavLink>
             <NavLink to={'/comments'}>Comments</NavLink>
             <NavLink to={'/cars'}>Cars</NavLink>
-            <Outlet/>
         </div>
     );
 };

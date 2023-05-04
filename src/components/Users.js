@@ -1,24 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {usersService} from "../services";
 import {usersActions} from "../redux/slices";
-import UsersPage from "../pages/UsersPage";
 import User from "./User";
 import {useForm} from "react-hook-form";
-import {Form} from "react";
 
 const Users = () => {
     const dispatch = useDispatch();
     const {users} = useSelector(state => state.users);
     useEffect(() => {
         usersService.getAll().then(value => value.data).then(value => dispatch(usersActions.getUsers(value)))
-    }, []);
+    }, [dispatch]);
 
     const {register, reset, handleSubmit} = useForm();
     const save = async (user) => {
         const {data} = await usersService.create(user);
-        console.log(user);
-        dispatch(usersActions.getUsers([...users, data]))
+        dispatch(usersActions.createUsers(data))
         reset();
     }
     return (

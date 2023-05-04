@@ -1,0 +1,15 @@
+.Header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    background-color: #71608D;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.Header a {
+    text-decoration: none;
+    color: white;
+}
+
