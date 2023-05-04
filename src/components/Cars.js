@@ -5,12 +5,12 @@ import {carsAction} from "../redux/slices";
 import Car from "./Car";
 
 const Cars = () => {
-    const dispatch = useDispatch;
-    const {cars} = useSelector(state => state.cars);
+    const dispatch = useDispatch();
+    const {cars, trigger} = useSelector(state => state.cars);
     console.log(cars);
     useEffect(() => {
         carsService.getAll().then(value => value.data).then(value => dispatch(carsAction.setAll(value)))
-    }, [dispatch])
+    }, [dispatch, trigger])
     return (
         <div>
             {

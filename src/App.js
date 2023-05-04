@@ -2,7 +2,6 @@ import {Provider} from "react-redux";
 import {setupStore} from "./redux/store";
 import MainLayout from "./layouts/MainLayout";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {Comments, Users} from "./components";
 import CommentsPage from "./pages/CommentsPage";
 import UsersPage from "./pages/UsersPage";
 import CarsPage from "./pages/CarsPage";
