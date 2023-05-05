@@ -1,5 +1,5 @@
 import React from 'react';
-import Cars from "../components/Cars";
+import {Cars} from "../components";
 import CarsForm from "../components/CarsForm";
 
 const CarsPage = () => {

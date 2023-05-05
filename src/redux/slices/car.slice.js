@@ -13,7 +13,7 @@ const slice = createSlice({
         setAll: (state, action) => {
             state.cars = action.payload
         },
-        setUpdate: (state, action) => {
+        setCarForUpdate: (state, action) => {
             state.carForUpdate = action.payload
         },
         changeTrigger: (state, action) => {

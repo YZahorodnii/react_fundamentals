@@ -10,7 +10,7 @@ const Cars = () => {
     console.log(cars);
     useEffect(() => {
         carsService.getAll.then(value => value.data).then(value => dispatch(carsAction.setAll(value)))
-    }, [dispatch, trigger, carForUpdate])
+    }, [dispatch, trigger])
     return (
         <div>
             {
@@ -20,4 +20,4 @@ const Cars = () => {
     );
 };
 
-export default Cars;
+export {Cars};
