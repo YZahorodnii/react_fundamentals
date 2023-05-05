@@ -1,7 +1,7 @@
 import React from 'react';
 import {carsService} from "../services";
 import {useDispatch} from "react-redux";
-import {carsAction} from "../redux/slices/car.slice";
+import {carsAction} from "../redux/slices";
 
 const Car = ({car}) => {
     const {id, brand, price, year} = car;
@@ -25,4 +25,4 @@ const Car = ({car}) => {
     );
 };
 
-export default Car;
+export {Car};

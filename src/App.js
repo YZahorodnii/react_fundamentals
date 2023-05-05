@@ -1,7 +1,7 @@
 import {Route, Routes} from "react-router-dom";
-import MainLayout from './layouts/MainLayout'
-import CarsPage from "./pages/CarsPage";
-import Home from "./pages/Home";
+import {MainLayout} from './layouts'
+import {CarsPage} from "./pages";
+import {Home} from "./pages/Home";
 
 function App() {
   return (
@@ -17,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export {App};

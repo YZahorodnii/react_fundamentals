@@ -1,6 +1,6 @@
 import React from 'react';
 import {Cars} from "../components";
-import CarsForm from "../components/CarsForm";
+import {CarsForm} from "../components";
 
 const CarsPage = () => {
     return (
@@ -11,4 +11,4 @@ const CarsPage = () => {
     );
 };
 
-export default CarsPage;
+export {CarsPage};

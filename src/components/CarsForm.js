@@ -2,7 +2,7 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 import {carsService} from "../services";
 import {useDispatch} from "react-redux";
-import {carsAction} from "../redux/slices/car.slice";
+import {carsAction} from "../redux/slices";
 
 const CarsForm = () => {
     const {register, reset, setValue, handleSubmit} = useForm();
@@ -10,12 +10,10 @@ const CarsForm = () => {
     const dispatch = useDispatch();
 
     const save = async (car) => {
-        const {data} = await carsService.create(car);
-        dispatch(carsAction.setAll(data));
+        await carsService.create(car);
+        dispatch(carsAction.changeTrigger());
         reset();
     }
-
-
 
     return (
         <form onSubmit={handleSubmit(save)}>
@@ -27,4 +25,4 @@ const CarsForm = () => {
     );
 };
 
-export default CarsForm;
+export {CarsForm};
