@@ -11,7 +11,6 @@ const Car = ({car}) => {
         dispatch(carsAction.changeTrigger(data))
     }
 
-
     return (
         <div>
             <ul>
@@ -20,7 +19,7 @@ const Car = ({car}) => {
                 <li>{price}</li>
                 <li>{year}</li>
                 <button onClick={() => deleteCar(car)}>delete</button>
-                <button onClick={() => carsAction.setUpdate}>update</button>
+                <button onClick={() => dispatch(carsAction.carForUpdate(car))}>update</button>
             </ul>
         </div>
     );
