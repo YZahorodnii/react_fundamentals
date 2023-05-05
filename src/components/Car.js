@@ -11,11 +11,6 @@ const Car = ({car}) => {
         dispatch(carsAction.changeTrigger(data))
     }
 
-    const updateCar = async (carForUpdate) => {
-        const {data} = await carsService.updateById(carForUpdate.id);
-        dispatch(carsAction.setUpdate(carForUpdate(data)))
-        dispatch(carsAction.changeTrigger(data))
-    }
 
     return (
         <div>
@@ -25,7 +20,7 @@ const Car = ({car}) => {
                 <li>{price}</li>
                 <li>{year}</li>
                 <button onClick={() => deleteCar(car)}>delete</button>
-                <button onClick={() => updateCar(car)}>update</button>
+                <button onClick={() => carsAction.setUpdate}>update</button>
             </ul>
         </div>
     );
