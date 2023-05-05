@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import {carsService} from "../services";
 import {useDispatch, useSelector} from "react-redux";
-import {carsAction} from "../redux/slices/car.slice";
+import {carsAction} from "../redux/slices";
 import {Car} from "./Car";
 
 const Cars = () => {
-    const {cars, trigger, carForUpdate} = useSelector(state => state.cars);
+    const {cars, trigger} = useSelector(state => state.cars);
     const dispatch = useDispatch();
     console.log(cars);
     useEffect(() => {
