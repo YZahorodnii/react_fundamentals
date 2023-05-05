@@ -6,6 +6,7 @@ import {carsAction} from "../redux/slices";
 const Car = ({car}) => {
     const {id, brand, price, year} = car;
     const dispatch = useDispatch();
+
     const deleteCar = async (car) => {
         await carsService.deleteById(car.id);
         dispatch(carsAction.changeTrigger())
