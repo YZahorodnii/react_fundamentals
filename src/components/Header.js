@@ -1,12 +1,13 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import css from './Header.module.css'
 
 const Header = () => {
+    const navigate = useNavigate()
     return (
         <div className={css.Header}>
             <NavLink to={'/home'}>Home</NavLink>
-            <NavLink to={'/cars'}>Cars</NavLink>
+            <button onClick={() => navigate('/cars')}>cars</button>
         </div>
     );
 };
