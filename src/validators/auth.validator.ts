@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-Joi.object({
+const authValidator = Joi.object({
     username: Joi.string().required().regex(/^[a-zA-Z]\w{1,19}$/).messages({
         'string.pattern.base': 'First char must be letter, min 2 and max 20 chars',
         'string.required': 'this field is required'
@@ -10,3 +10,5 @@ Joi.object({
         'string.required': 'This field is required'
     })
 })
+
+export {authValidator};
