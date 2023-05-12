@@ -9,23 +9,24 @@ const CarForm:FC = () => {
     const dispatch = useAppDispatch();
     const {carForUpdate} = useAppSelector(state => state.carReducer);
 
-    const save: SubmitHandler<ICar> =  async (car) => {
-        await dispatch(carActions.createCar({car}))
-        reset()
-    }
-
-    const update: SubmitHandler<ICar> = async (car) => {
-        await dispatch(carActions.updateCar({id: carForUpdate.id, car}))
-        reset()
-    }
-
     useEffect(() => {
         if(carForUpdate) {
             setValue('brand', carForUpdate.brand)
             setValue('price', carForUpdate.price)
             setValue('year', carForUpdate.year)
         }
-    }, [carForUpdate])
+    }, [carForUpdate, setValue])
+
+    const save: SubmitHandler<ICar> =  async (car) => {
+        await dispatch(carActions.createCar({car}))
+        reset()
+
+    }
+    const update: SubmitHandler<ICar> = async (car) => {
+        await dispatch(carActions.updateCar({id: carForUpdate.id, car}))
+        reset()
+
+    }
     return (
         <div>
             <form onSubmit={handleSubmit(carForUpdate?update:save)}>

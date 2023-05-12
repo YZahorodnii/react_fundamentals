@@ -1,10 +1,10 @@
 import {axiosService} from "./axios.service";
 import {urls} from "../constants";
-import {ICar} from "../interfaces";
+import {ICar, IPagination} from "../interfaces";
 import {IRes} from "../types";
 
 class CarsService {
-    getAll(): IRes<ICar[]> {
+    getAll(): IRes<IPagination<ICar[]>> {
         return axiosService.get(urls.cars.cars)
     }
 
@@ -18,6 +18,9 @@ class CarsService {
 
     deleteById(id: number): IRes<ICar> {
         return axiosService.delete(urls.cars.byId(id))
+    }
+    addPhoto(id: number, photo: FormData): IRes<ICar> {
+        return axiosService.put(urls.cars.addPhoto(id), photo)
     }
 }
 
